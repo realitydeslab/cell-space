@@ -34,29 +34,31 @@ namespace RealityDesignLab.MoveNet {
 
                 var currentSkeleton = new List<Transform>();
                 // Instantiate keypoints
-                for (var i = 5; i < 17; ++i) {
+                for (var i = 0; i < 1; ++i) {
+                    
                    var point = Instantiate(keypointPrefab, (Vector3) pose[i], Quaternion.identity, transform);
                    point.gameObject.SetActive(true);
                    currentSkeleton.Add(point);
                 }
                 currentSkeletons.Add(currentSkeleton);
-                
-                foreach (var positions in new [] {
-                   new [] { pose.leftShoulder, pose.rightShoulder },
-                   new [] { pose.leftShoulder, pose.leftElbow, pose.leftWrist },
-                   new [] { pose.rightShoulder, pose.rightElbow, pose.rightWrist },
-                   new [] { pose.leftShoulder, pose.leftHip },
-                   new [] { pose.rightShoulder, pose.rightHip },
-                   new [] { pose.leftHip, pose.rightHip },
-                   new [] { pose.leftHip, pose.leftKnee, pose.leftAnkle },
-                   new [] { pose.rightHip, pose.rightKnee, pose.rightAnkle }
-                }) {
-                   var bone = Instantiate(bonePrefab, transform.position, Quaternion.identity, transform);
-                   bone.gameObject.SetActive(true);
-                   bone.positionCount = positions.Length;
-                   bone.SetPositions(positions.Select(v => (Vector3)v).ToArray());
-                   currentSkeleton.Add(bone.transform);
-                };
+
+
+                //foreach (var positions in new [] {
+                //   new [] { pose.leftShoulder, pose.rightShoulder },
+                //   new [] { pose.leftShoulder, pose.leftElbow, pose.leftWrist },
+                //   new [] { pose.rightShoulder, pose.rightElbow, pose.rightWrist },
+                //   new [] { pose.leftShoulder, pose.leftHip },
+                //   new [] { pose.rightShoulder, pose.rightHip },
+                //   new [] { pose.leftHip, pose.rightHip },
+                //   new [] { pose.leftHip, pose.leftKnee, pose.leftAnkle },
+                //   new [] { pose.rightHip, pose.rightKnee, pose.rightAnkle }
+                //}) {
+                //   var bone = Instantiate(bonePrefab, transform.position, Quaternion.identity, transform);
+                //   bone.gameObject.SetActive(true);
+                //   bone.positionCount = positions.Length;
+                //   bone.SetPositions(positions.Select(v => (Vector3)v).ToArray());
+                //   currentSkeleton.Add(bone.transform);
+                //};
             }
         }
         #endregion

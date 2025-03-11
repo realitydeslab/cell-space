@@ -25,14 +25,14 @@ namespace RealityDesignLab.MoveNet
 
         private OneEuroFilter _filter;
         private Model _runtimeModel;
-        private IWorker _worker;
-        private Ops _ops;
+        private Worker _worker;
+        // private IBackend _ops;
         private TextureTransform _textureTransform;
 
         void Start () {
             _runtimeModel = ModelLoader.Load(_modelAsset);
-            _worker = WorkerFactory.CreateWorker(BackendType.GPUCompute, _runtimeModel);
-            _ops = WorkerFactory.CreateOps(BackendType.GPUCompute, new TensorCachingAllocator());
+            _worker = new Worker(_runtimeModel, BackendType.GPUCompute);
+            _ops = WorkerFactory.CreateBackend(BackendType.GPUCompute, new TensorCachingAllocator());
             _filter = new OneEuroFilter(0.5f, 3f, 1f);
             _textureTransform = new TextureTransform().SetDimensions(MODEL_IMAGE_SIZE, MODEL_IMAGE_SIZE, 3).SetTensorLayout(TensorLayout.NCHW);
         }
@@ -62,8 +62,8 @@ namespace RealityDesignLab.MoveNet
         {
             _worker.Execute(input);
 
-            var dets = _worker.PeekOutput("dets") as TensorFloat;
-            var keypoints = _worker.PeekOutput("keypoints") as TensorFloat;
+            var dets = _worker.PeekOutput("dets") as Tensor<float>;
+            var keypoints = _worker.PeekOutput("keypoints") as Tensor<float>;
             Debug.Log(dets.shape);
             Debug.Log(keypoints.shape);
 

@@ -8,7 +8,7 @@ struct PanelListView: View {
     
     var body: some View {
         List {
-            PanelView(panelIndex: 1, panelName: "MOFA")
+            PanelView(panelIndex: 1, panelName: "BioFeedback")
                 .listRowPlatterColor(.clear)
         }
     }

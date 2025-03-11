@@ -36,7 +36,7 @@ namespace HoloKit.ColocatedMultiplayerBoilerplate
 
         private void Start()
         {
-            OnAirDropToggled(true);
+            OnRouterToggled(true);
         }
 
         public void OnAirDropToggled(bool value)

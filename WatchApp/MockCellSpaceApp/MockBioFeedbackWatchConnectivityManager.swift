@@ -4,7 +4,7 @@
 
 import WatchConnectivity
     
-enum MofaRoundResult: Int {
+enum BioFeedbackRoundResult: Int {
     case victory = 0
     case defeat = 1
     case draw = 2
@@ -33,7 +33,7 @@ class MockBioFeedbackWatchConnectivityManager: NSObject, ObservableObject {
         }
     }
     
-    func onRoundEnded(roundResult: MofaRoundResult, kill: Int, hitRate: Float) {
+    func onRoundEnded(roundResult: BioFeedbackRoundResult, kill: Int, hitRate: Float) {
         let context = ["BioFeedback" : true,
                        "End" : true,
                        "RoundResult" : roundResult.rawValue,

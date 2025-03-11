@@ -31,7 +31,7 @@ struct PanelView: View {
                             Image("arrow-right")
                                 .resizable()
                                 .frame(maxWidth: 16, maxHeight: 16)
-                            Text("MOFA")
+                            Text("BioFeedback")
                         }
                         .font(Font.custom("ObjectSans-BoldSlanted", size: 22))
                         .foregroundColor(.black)
@@ -46,6 +46,6 @@ struct PanelView: View {
 
 struct PanelView_Previews: PreviewProvider {
     static var previews: some View {
-        PanelView(panelIndex: 1, panelName: "MOFA")
+        PanelView(panelIndex: 1, panelName: "BioFeedback")
     }
 }

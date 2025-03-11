@@ -56,11 +56,11 @@ namespace CellSpace
 
         [SerializeField, Range(0.0f, 0.1f)] float _offset;
 
-        [SerializeField, Range(0.01f, 0.2f)] float _wireframeTubeWidth;
-        [SerializeField, Range(0.01f, 0.2f)] float _wireframeNonPlayerTubeWidth;
+        [SerializeField, Range(0.001f, 0.2f)] float _wireframeTubeWidth;
+        [SerializeField, Range(0.001f, 0.2f)] float _wireframeNonPlayerTubeWidth;
 
-        [SerializeField, Range(0.01f, 0.2f)] float _edgeTubeWidth;
-        [SerializeField, Range(0.01f, 0.2f)] float _edgeNonPlayerTubeWidth;
+        [SerializeField, Range(0.001f, 0.2f)] float _edgeTubeWidth;
+        [SerializeField, Range(0.001f, 0.2f)] float _edgeNonPlayerTubeWidth;
 
         #endregion
 

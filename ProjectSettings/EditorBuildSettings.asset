@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/CellSpace/Scenes/GravField_Multiplayer_QR.unity
     guid: 8953b9626238f4e098ee3df33fd1b3c6
   - enabled: 0
@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/CellSpace/Scenes/CellSpace_Multiplayer.unity
     guid: 10637ee2bb1c74d4d9f672ae5c78b233
-  - enabled: 1
+  - enabled: 0
     path: Assets/CellSpace/Scenes/GravField_Multiplayer_QR_Host.unity
     guid: 1e92961cc34c84e8c95eabd102e329a4
   m_configObjects:

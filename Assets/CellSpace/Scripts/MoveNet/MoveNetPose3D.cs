@@ -119,6 +119,11 @@ namespace RealityDesignLab.MoveNet {
         #region --Operations--
         private readonly Vector4[] keypoints;
 
+        internal Pose3D(Vector4[] keypoints)
+        {
+            this.keypoints = keypoints;
+        }
+
         IEnumerator<Vector4> IEnumerable<Vector4>.GetEnumerator () {
             for (var i = 0; i < Count; ++i)
                 yield return this[i];

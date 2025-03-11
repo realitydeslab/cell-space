@@ -38,7 +38,7 @@ struct BioFeedbackFightingView: View {
     }
     
     var fightingText: some View {
-        Text("SWING YOUR ARM TO CAST SPELLS")
+        Text("Collecting your biofeedback")
             .multilineTextAlignment(.center)
             .font(Font.custom("ObjectSans-BoldSlanted", size: 14))
     }
